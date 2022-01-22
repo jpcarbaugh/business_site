@@ -10,7 +10,7 @@ const BusinessSchema = new mongoose.Schema({
         required: [true, "Description is required"]
     },
     timeLength: {
-        type: Number,
+        type: String,
         required: [true, "Length of time is required"]
     },
     price: {
