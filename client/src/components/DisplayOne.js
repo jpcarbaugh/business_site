@@ -25,7 +25,7 @@ const DisplayOne = (props) => {
     }, []);
 
     return (
-        <div>
+        <div className="container">
             <h4>{title}</h4>
             <table className="table">
                 <tbody>

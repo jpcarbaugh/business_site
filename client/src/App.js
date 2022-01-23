@@ -6,11 +6,13 @@ import Edit from './components/Edit';
 import Form from './components/Form';
 import About from './components/About';
 import Home from './components/Home';
+import house from './img/house.jpg'
 
 
 function App() {
   return (
     <div className="App">
+      {/* <img src={house} className='img-fluid'></img> */}
       <h1>Home Inspectors LLC</h1>
 
       <a href='/'>Home</a> | <a href='/services'>Services</a> | <a href='/about'>About</a> | <a href=''>Login</a>

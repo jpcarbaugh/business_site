@@ -2,7 +2,7 @@ import { navigate } from "@reach/router";
 
 const Home = () => {
     return (
-        <div>
+        <div className="container">
             <p>
                 We provide home inspection reports to York County and the surrounding area. 
                 A home inspection report will tell you about any observable defects on your home. 

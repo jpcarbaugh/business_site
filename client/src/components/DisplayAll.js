@@ -29,16 +29,23 @@ const DisplayAll = () => {
             We are not the general contractors for that work but we will be able to ensure those projects are getting done according to the 
             manufactures recommendations or offer third party documentation reporting the quality of the work.
             </p>
-            {service.map((element, index) => {
-                return(
-                    <div key={index}>
-                        <h5>{element.title}</h5>
-                        <p>{element.timeLength}</p>
-                        <p>${element.price}</p>
-                        <button className="btn btn-primary" onClick={() => handleDetails(element._id)}>More Info</button>
-                    </div>
-                )
-            })}
+            <div className="row">
+                    {service.map((element, index) => {
+                    return(
+                        <div className="col-sm-3">
+                            <div className="card text-center text-white bg-secondary" style={{width: '18rem'}}>
+                                <div className="card-body" key={index}>
+                                    <h5 className="card-title">{element.title}</h5>
+                                    <p>{element.timeLength}</p>
+                                    <p>${element.price}</p>
+                                    <button className="btn btn-primary" onClick={() => handleDetails(element._id)}>More Info</button>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                    })}
+            </div>
+            
         </div>
     )
 };

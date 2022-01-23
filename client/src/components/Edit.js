@@ -42,7 +42,7 @@ const Edit = (props) => {
     };
 
     return (
-        <div>
+        <div className="col-6">
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="title" className="form-label">Title:</label>
