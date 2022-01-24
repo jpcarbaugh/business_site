@@ -1,6 +1,6 @@
 const Business = require("../models/business.model");
 
-const healthCheck = (rew, res) => {
+const healthCheck = (req, res) => {
     res.send("Controller good to go")
 };
 
