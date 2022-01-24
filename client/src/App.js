@@ -7,6 +7,7 @@ import Form from './components/Form';
 import About from './components/About';
 import Home from './components/Home';
 import house from './img/house.jpg'
+import Login from './components/Login';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       {/* <img src={house} className='img-fluid'></img> */}
       <h1>Home Inspectors LLC</h1>
 
-      <a href='/'>Home</a> | <a href='/services'>Services</a> | <a href='/about'>About</a> | <a href=''>Login</a>
+      <a href='/'>Home</a> | <a href='/services'>Services</a> | <a href='/about'>About</a> | <a href='/login'>Login</a>
 
       <Router>
         <Home path="/" />
@@ -24,6 +25,7 @@ function App() {
         <Edit path="/services/:id/edit" />
         <DisplayOne path="/services/:id" />
         <About path="/about" />
+        <Login path="/login" />
       </Router>
     </div>
   );
