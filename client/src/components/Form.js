@@ -8,9 +8,10 @@ const Form = () => {
     const [timeLength, setTimeLength] = useState("");
     const [price, setPrice] = useState("");
     const [errors, setErrors] = useState({});
+    const [authErrors, setAuthErrors] = useState("");
 
     //This handles the submit to the backend
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         const postData = {
             title,
@@ -18,15 +19,32 @@ const Form = () => {
             timeLength,
             price
         };
-        axios.post("http://localhost:8000/api/service", postData)
-        .then((res) => {
-            console.log("Success", res);
+
+        try {
+            const newService = await axios.post("http://localhost:8000/api/service", postData, { withCredentials: true });
+            console.log(newService);
             navigate("/services");
-        })
-        .catch((err) => {
-            console.log("Error", err.response.data);
-            setErrors(err.response.data.errors);
-        });
+        } catch (err) {
+            console.log(err.response);
+            if (err.response.status === 401) {
+                console.log("401");
+                setAuthErrors("You must first login to add a new service");
+            } else {
+                console.log("success");
+                setErrors(err.response.data.errors)
+            }
+        }
+
+
+        // axios.post("http://localhost:8000/api/service", postData)
+        // .then((res) => {
+        //     console.log("Success", res);
+        //     navigate("/services");
+        // })
+        // .catch((err) => {
+        //     console.log("Error", err.response.data);
+        //     setErrors(err.response.data.errors);
+        // });
     };
 
     return (

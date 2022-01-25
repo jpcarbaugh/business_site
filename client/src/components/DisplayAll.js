@@ -1,25 +1,19 @@
 import { navigate } from "@reach/router";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import DisplayButton from "./buttons/DisplayButton";
 
-const DisplayAll = () => {
+const DisplayAll = (props) => {
     const [service, setService] = useState([]);
 
-    //handles the redirect to the edit page to update a service
-    // const handleEdit = (elementId) => {
-    //     navigate(`/service/${elementId}/edit`);
-    // };
+    const {isLoggedIn} = props;
 
-    //handles the redirect to the display of a single service
-    const handleDetails = (elementId) => {
-        navigate(`/services/${elementId}`);
-    };
 
     ////This makes an API call to the database to pull in the current data all services
     useEffect(() => {
         axios.get("http://localhost:8000/api/service")
         .then(res => setService(res.data));
-    }, []);
+    }, [service]);
 
     return (
         <div className="container">
@@ -32,13 +26,13 @@ const DisplayAll = () => {
             <div className="row">
                     {service.map((element, index) => {
                     return(
-                        <div className="col-sm-3">
+                        <div className="col-sm-3" key={index}>
                             <div className="card text-center text-white bg-secondary" style={{width: '18rem'}}>
-                                <div className="card-body" key={index}>
+                                <div className="card-body">
                                     <h5 className="card-title">{element.title}</h5>
                                     <p>{element.timeLength}</p>
                                     <p>${element.price}</p>
-                                    <button className="btn btn-primary" onClick={() => handleDetails(element._id)}>More Info</button>
+                                    <DisplayButton isLoggedIn={isLoggedIn} elementId={element._id}/>
                                 </div>
                             </div>
                         </div>
