@@ -16,6 +16,10 @@ const BusinessSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: [true, "Price is required"]
+    },
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 })
 
