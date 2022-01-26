@@ -26,17 +26,14 @@ const DisplayOne = (props) => {
 
     return (
         <div className="container">
-            <h4>{title}</h4>
-            <table className="table">
-                <tbody>
-                    <tr>
-                        <td>{timeLength}</td>
-                        <td>{price}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <t6>Service Description</t6>
-            <p>{description}</p>
+            <h4 style={{marginTop: "25px"}}>{title}</h4>
+            <div className="panel text-center text-white bg-secondary" style={{width: '8rem', marginLeft: "580px", marginTop: "25px"}}>
+                <div className="panel-body">
+                    <p>{timeLength} | {price}</p>
+                </div>
+            </div>
+            <h6 style={{marginTop: "25px"}}>Service Description</h6>
+            <p style={{marginTop: "25px"}}>{description}</p>
         </div>
     )
 

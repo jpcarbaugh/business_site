@@ -29,11 +29,11 @@ const DisplayButton = (props) => {
         return (
             <>
                 <button className="btn btn-primary" onClick={() => handleDetails(elementId)}>More Info</button>
-                <button className="btn btn-warning" onClick={() => handleEdit(elementId)}>Edit</button>
+                <button className="btn btn-warning" style={{margin: "4px"}} onClick={() => handleEdit(elementId)}>Edit</button>
                 <button className="btn btn-danger" onClick={() => handleDelete(elementId)}>Delete</button>
             </>
         )} else {
-        return <button className="btn btn-primary" onClick={() => handleDetails(props._id)}>More Info</button>
+        return <button className="btn btn-primary" onClick={() => handleDetails(elementId)}>More Info</button>
     }
 }
 

@@ -17,8 +17,8 @@ const DisplayAll = (props) => {
 
     return (
         <div className="container">
-            <h1>Inspection Services</h1>
-            <p>
+            <h1 style={{marginTop: "25px"}}>Inspection Services</h1>
+            <p style={{marginTop: "25px"}}>
             In addition to general home inspections, we can also inspect, document, and even oversee work you are getting done to your home. 
             We are not the general contractors for that work but we will be able to ensure those projects are getting done according to the 
             manufactures recommendations or offer third party documentation reporting the quality of the work.
@@ -27,7 +27,7 @@ const DisplayAll = (props) => {
                     {service.map((element, index) => {
                     return(
                         <div className="col-sm-3" key={index}>
-                            <div className="card text-center text-white bg-secondary" style={{width: '18rem'}}>
+                            <div className="card text-center text-white bg-secondary" style={{width: '18rem', marginBottom: "10px"}}>
                                 <div className="card-body">
                                     <h5 className="card-title">{element.title}</h5>
                                     <p>{element.timeLength}</p>

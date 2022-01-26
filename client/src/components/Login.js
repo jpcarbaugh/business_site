@@ -29,7 +29,7 @@ const Login = (props) => {
 
     return (
         <div className="container">
-            <div className="col-6">
+            <div className="col-6" style={{marginLeft: "325px", marginTop: "50px"}}>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="email" className="form-label">Email:</label>

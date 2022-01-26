@@ -1,4 +1,4 @@
-
+import paMap from "../img/paMap.png"
 
 const About = () => {
     return (
@@ -13,6 +13,10 @@ const About = () => {
                     Expensive, Hard to see defects could be overlooked and may lead to high contractor fees in the future. 
                     We are big on making hidden fees transparent so let us show you what you will be getting into when buying a home.
                 </p>
+            </div>
+
+            <div>
+                <img src={paMap} alt="PA Map" style={{marginBottom: "15px"}}></img>
             </div>
 
             <h2>Contact Us</h2>

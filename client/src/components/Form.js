@@ -48,7 +48,7 @@ const Form = () => {
     };
 
     return (
-        <div className="col-6">
+        <div className="col-6" style={{marginLeft: "400px", marginTop: "50px"}}>
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="title" className="form-label">Title:</label>
